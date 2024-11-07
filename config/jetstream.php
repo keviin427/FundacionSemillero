@@ -31,7 +31,10 @@ return [
 
     'middleware' => ['web'],
 
-    'auth_session' => AuthenticateSession::class,
+    'auth_session' => [
+        'guard' => 'web',
+        'middleware' => ['web'],
+    ],
 
     /*
     |--------------------------------------------------------------------------

@@ -9,12 +9,13 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Auth;
+
 
 class User extends Authenticatable
 {
     use HasApiTokens;
-
-    /** @use HasFactory<\Database\Factories\UserFactory> */
     use HasFactory;
     use HasProfilePhoto;
     use Notifiable;
@@ -26,9 +27,10 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
         'email',
         'password',
+        'role',
+        
     ];
 
     /**
@@ -63,5 +65,53 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+
+    
+
+    /**
+     * Determine if the user has the given role.
+     *
+     * @param  string  $role
+     * @return bool
+     */
+    public function hasRole($role)
+    {
+        return $this->role === $role;
+    }
+
+
+    public function adminlte_profile_url()
+    {
+        return '/user/profile';
+    }
+
+    public function adminlte_image()
+    {
+        return 'https://picsum.photos/300/300';
+    }
+
+    public function adminlte_desc()
+    {
+        // Verificar si el usuario está autenticado
+        if (Auth::check()) {
+            // Obtener el usuario autenticado
+            $user = Auth::user();
+
+            // Mapear el valor del campo 'role' a las descripciones correspondientes
+            switch ($user->role) {
+                case 'ps':
+                    return 'Psicologo';
+                case 'ed':
+                    return 'Educador';
+                case 'sa':
+                    return 'Admin General';
+                default:
+                    return 'RolMmmmm';
+            }
+        }
+
+        // En caso de que el usuario no esté autenticado, puedes retornar un valor por defecto o manejarlo según tus necesidades
+        return 'Usuario no autenticado';
     }
 }

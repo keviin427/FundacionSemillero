@@ -40,6 +40,22 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
+        'educador' => [
+            'driver' => 'session',
+            'provider' => 'educador_',
+        ],
+        'psicologo' => [
+            'driver' => 'session',
+            'provider' => 'psicologo_',
+        ],
+        'adminGeneral' => [
+            'driver' => 'session',
+            'provider' => 'admingeneral_',
+        ],
+        'api' => [
+            'driver' => 'sanctum',
+            'provider' => 'users',
+        ],
     ],
 
     /*
@@ -62,13 +78,21 @@ return [
     'providers' => [
         'users' => [
             'driver' => 'eloquent',
-            'model' => env('AUTH_MODEL', App\Models\User::class),
+            'model' => \App\Models\User::class,
+        ],
+        'psicologo_' => [
+            'driver' => 'eloquent',
+            'model' => \App\Models\Psicologo::class,
+        ],
+        'educador_' => [
+            'driver' => 'eloquent',
+            'model' => \App\Models\Educador::class,
         ],
 
-        // 'users' => [
-        //     'driver' => 'database',
-        //     'table' => 'users',
-        // ],
+        'admingeneral_' => [
+            'driver' => 'eloquent',
+            'model' => \App\Models\AdminGeneral::class,
+        ],
     ],
 
     /*

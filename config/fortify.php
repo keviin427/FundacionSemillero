@@ -1,5 +1,9 @@
 <?php
 
+use App\Actions\Fortify\CreateNewUser;
+use App\Actions\Fortify\ResetUserPassword;
+use App\Actions\Fortify\UpdateUserPassword;
+use App\Actions\Fortify\UpdateUserProfileInformation;
 use Laravel\Fortify\Features;
 
 return [
@@ -73,7 +77,7 @@ return [
     |
     */
 
-    'home' => '/dashboard',
+    'home' => '/loginTemplate',
 
     /*
     |--------------------------------------------------------------------------
@@ -156,4 +160,10 @@ return [
         ]),
     ],
 
+    'actions' => [
+        'createNewUser' => CreateNewUser::class,
+        'resetUserPassword' => ResetUserPassword::class,
+        'updateUserPassword' => UpdateUserPassword::class,
+        'updateUserProfileInformation' => UpdateUserProfileInformation::class,
+    ],
 ];
