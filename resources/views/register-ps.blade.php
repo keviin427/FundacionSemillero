@@ -5,14 +5,18 @@
         </x-slot>
 
         <x-validation-errors class="mb-4" />
-
+        @session('status')
+            <div class="mb-4 font-medium text-sm text-green-600">
+                {{ $value }}
+            </div>
+        @endsession
         <form method="POST" action="{{ route('register') }}">
             @csrf
 
             <div>
                 <x-label for="name" value="{{ __('Nombre') }}" />
-                <x-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')"
-                    required autofocus autocomplete="name" />
+                <x-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required
+                    autofocus autocomplete="name" />
             </div>
 
             <div>
@@ -21,28 +25,27 @@
                     required autofocus autocomplete="surname" />
             </div>
 
-            
+
 
             <div class="mt-4">
                 <x-label for="fecha_nacimiento" value="{{ __('Fecha de Nacimiento') }}" />
-                <x-input id="fecha_nacimiento" class="block mt-1 w-full" type="date"
-                    name="fecha_nacimiento" />
+                <x-input id="fecha_nacimiento" class="block mt-1 w-full" type="date" name="fecha_nacimiento" />
             </div>
-            
+
             <div class="mt-4" style="display: none;">
                 <x-label for="role" :value="__('Rol')" />
                 <select id="role" name="role" class="block mt-1 w-full" required>
                     <option value="ps">Psicologo</option>
                 </select>
             </div>
-            
-           
+
+
             <div class="mt-4">
                 <x-label for="direccion_domicilio" value="{{ __('Dirección de Domicilio') }}" />
                 <x-input id="direccion_domicilio" class="block mt-1 w-full" type="text" name="direccion_domicilio" />
             </div>
-            
-            
+
+
             <div>
                 <x-label for="phone" value="{{ __('Número de Télefono') }}" />
                 <x-input id="phone" class="block mt-1 w-full" type="tel" name="phone" :value="old('phone')"
@@ -80,4 +83,3 @@
         </form>
     </x-authentication-card>
 </x-guest-layout>
-

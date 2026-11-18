@@ -7,7 +7,7 @@
     <div class="row">
       <div class="col-md-12 text-center">
         <img src="" class="img-fluid" alt="">
-        <h1 style="font-size: 80px; font-family: Arial, sans-serif;">TRANSFER  PRO</h1>
+        <h1 style="font-size: 80px; font-family: Arial, sans-serif;">SEMILLERO DE ESPERANZA</h1>
         <p>Bienvenido, {{ Auth::user()->name }} {{ Auth::user()->surname }}</p>
     </div>
     </div>

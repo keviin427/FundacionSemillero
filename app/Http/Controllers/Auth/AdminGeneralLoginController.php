@@ -25,8 +25,8 @@ class AdminGeneralLoginController extends Controller
 
         $credentials = $request->only('email', 'password');
 
-        if (Auth::guard('adminGeneral')->attempt($request->only('email', 'password'), $request->filled('remember'))) {
-            return redirect()->intended(route('dashboard'));
+        if (Auth::guard('adminGeneral')->attempt($credentials)) {
+            return redirect()->intended('dashboard');
         }
 
         return redirect()->back()->withInput($request->only('email', 'remember'))->withErrors([

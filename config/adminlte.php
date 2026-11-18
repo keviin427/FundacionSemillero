@@ -15,7 +15,7 @@ return [
 
     'title' => 'Fundación',
     'title_prefix' => 'DashBoard',
-    'title_postfix' => '| Transfer Pro',
+    'title_postfix' => '| Semillero de Esperanza',
 
     /*
     |--------------------------------------------------------------------------
@@ -29,7 +29,7 @@ return [
     |
     */
 
-    'use_ico_only' => false,
+    'use_ico_only' => true,
     'use_full_favicon' => false,
 
     /*
@@ -62,7 +62,7 @@ return [
     |
     */
 
-    'logo' => '<b>Transfer</b>PRO',
+    'logo' => '<b>App Título</b>',
     'logo_img' => 'assets\images\LogoFundacion.png',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
@@ -112,11 +112,11 @@ return [
         'enabled' => true,
         'mode' => 'fullscreen',
         'img' => [
-            'path' => 'public\assets\images\LogoFundacion.png',
-            'alt' => 'AdminLTE Preloader Image',
+            'path' => 'assets\images\LogoFundacion.png',
+            'alt' => 'Cargando',
             'effect' => 'animation__shake',
-            'width' => 250,
-            'height' => 250,
+            'width' => 150,
+            'height' => 150,
         ],
     ],
 
@@ -151,7 +151,7 @@ return [
     |
     */
 
-    'layout_topnav' => true,
+    'layout_topnav' => false,
     'layout_boxed' => null,
     'layout_fixed_sidebar' => null,
     'layout_fixed_navbar' => true,
@@ -190,28 +190,18 @@ return [
     */
 
     'classes_body' => '',
-    'classes_brand' => 'bg-lightblue',
+    'classes_brand' => 'bg-warning',
     'classes_brand_text' => 'text-dark',
     'classes_content_wrapper' => '',
     'classes_content_header' => '',
     'classes_content' => '',
     'classes_sidebar' => 'sidebar-light-primary elevation-4',
     'classes_sidebar_nav' => '',
-    'classes_topnav' => 'navbar-light navbar-lightblue',
+    'classes_topnav' => 'bg-light',
     'classes_topnav_nav' => 'navbar-expand',
     'classes_topnav_container' => 'container',
 
-    // 'classes_body' => '',
-    // 'classes_brand' => 'bg-warning',
-    // 'classes_brand_text' => '',
-    // 'classes_content_wrapper' => '',
-    // 'classes_content_header' => '',
-    // 'classes_content' => '',
-    // 'classes_sidebar' => 'sidebar-light-primary elevation-4',
-    // 'classes_sidebar_nav' => '',
-    // 'classes_topnav' => 'navbar-white navbar-light',
-    // 'classes_topnav_nav' => 'navbar-expand',
-    // 'classes_topnav_container' => 'container',
+    
 
     /*
     |--------------------------------------------------------------------------
@@ -225,6 +215,7 @@ return [
     |
     */
 
+    
     'sidebar_mini' => 'lg',
     'sidebar_collapse' => false,
     'sidebar_collapse_auto_size' => false,
@@ -324,7 +315,7 @@ return [
         ['header' => 'CONFIGURACIÓN DE TU CUENTA'],
         [
             'text' => 'Perfil',
-            'url'  => 'user/profile',
+            'url'  => 'profile',
             'icon' => 'fas fa-fw fa-user',
         ],
 
@@ -350,22 +341,22 @@ return [
         // ],
 
 
-        [
-            // Otros elementos del menú...
+        // [
+        //     // Otros elementos del menú...
 
-            'text'    => 'Jugadores',
-            'url'     => 'jugadores_mostrar',
-            'icon'    => 'fas fa-running',
+        //     'text'    => 'Jugadores',
+        //     'url'     => 'jugadores_mostrar',
+        //     'icon'    => 'fas fa-running',
 
-        ],
-        [
-            // Otros elementos del menú...
+        // ],
+        // [
+        //     // Otros elementos del menú...
 
-            'text'    => 'Clubes',
-            'url'     => 'clubes_mostrar',
-            'icon'    => 'fas fa-shield-alt',
+        //     'text'    => 'Clubes',
+        //     'url'     => 'clubes_mostrar',
+        //     'icon'    => 'fas fa-shield-alt',
 
-        ],
+        // ],
 
     ],
 

@@ -8,6 +8,11 @@
     <link rel="stylesheet" type="text/css" href="assets/styles.css">
 
 </head>
+@session('status')
+    <div class="mb-4 font-medium text-sm text-green-600">
+        {{ $value }}
+    </div>
+@endsession
 
 <body>
     <div class="container h-100">

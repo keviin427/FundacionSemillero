@@ -71,5 +71,12 @@ class LoginController extends Controller
                 return Psicologo::class;
         }
     }
-}
+    public function logout(Request $request)
+    {
+        Auth::logout(); // Desautenticar al usuario
+        $request->session()->invalidate(); // Invalidar la sesión del usuario
+        $request->session()->regenerateToken(); // Regenerar el token de sesión por seguridad
 
+        return redirect('/login'); // Redirigir al formulario de login
+    }
+}

@@ -20,40 +20,19 @@
                         </a>
                     </div>
                 </div>
+                
+
+                
+
+                <div class="container h-100">
+                    <div class="d-flex justify-content-center align-items-center h-100">
+                        <a href="{{ url('/') }}" class="btn btn-primary btn-lg">
+                            <i class="fas fa-home"></i>
+                        </a>
+                    </div>
+                </div>
                 <div class="d-flex justify-content-center custom-margin">
-                    <h5>INICIAR SESIÓN</h5>
-                </div>
-
-                <div class="d-flex justify-content-center form_container">
-                    <form method="POST" action="{{ route('login') }}">
-                        @csrf
-                        <div class="input-group mb-3">
-                            <div class="input-group-append">
-                                <span class="input-group-text"><i class="fas fa-user"></i></span>
-                            </div>
-                            <input type="email" name="email" class="form-control input_user" placeholder="usuario"
-                                required autofocus>
-                        </div>
-                        <div class="input-group mb-2">
-                            <div class="input-group-append">
-                                <span class="input-group-text"><i class="fas fa-key"></i></span>
-                            </div>
-                            <input type="password" name="password" class="form-control input_pass"
-                                placeholder="contraseña" required>
-                        </div>
-                        <div class="d-flex justify-content-center mt-3 login_container">
-                            <button type="submit" class="btn login_btn">INGRESAR</button>
-                        </div>
-                    </form>
-                </div>
-
-                <div class="mt-4">
-                    <div class="d-flex justify-content-center links">
-                        ¿No tienes una cuenta? <a href="{{ route('register') }}" class="ml-2">Registrarse</a>
-                    </div>
-                    <div class="d-flex justify-content-center links">
-                        <a href="{{ route('password.request') }}">¿Olvidaste tu contraseña?</a>
-                    </div>
+                    <h5>HOME</h5>
                 </div>
             </div>
         </div>
